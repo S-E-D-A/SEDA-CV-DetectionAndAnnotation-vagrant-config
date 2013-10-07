@@ -18,6 +18,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Install Octave (Matlab clone)
   config.vm.provision :shell, :path => "installOctave.sh"
 
+  # Install OpenCV
+  config.vm.provision :shell, :path => "installOpenCV.sh"
+
+  # Install PTAM Libraries
+  config.vm.provision :shell, :path => "installPTAM_libs.sh"
+
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
   # config.vm.box_url = "http://domain.com/path/to/above.box"

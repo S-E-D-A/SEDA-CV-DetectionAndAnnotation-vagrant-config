@@ -11,16 +11,16 @@ apt-get update
 # Git
 apt-get install -y git
 
-# Vim
-apt-get install -y vim
+# Gitk
+apt-get install -y gitk
 
 # Create source directory
-mkdir -p "/vagrant/source"
+mkdir -p "/vagrant/sync"
 
 # Own as user
-chown -R vagrant:vagrant "/vagrant/source/"
+chown -R vagrant:vagrant "/vagrant/sync/"
 
 # Link source directory into home 
-if [[ ! -L "/home/vagrant/source" ]]; then
-  ln -s "/vagrant/source" "/home/vagrant/source"
+if [[ ! -L "/home/vagrant/sync" ]]; then
+  ln -s "/vagrant/sync" "/home/vagrant/sync"
 fi
