@@ -4,8 +4,10 @@ sudo apt-get update
 sudo apt-get install -y git-core
 
 cd ~
-mkdir PTAM_libs
-cd PTAM_libs/
+mkdir lib
+cd lib
+mkdir PTAM
+cd PTAM/
 git clone https://github.com/edrosten/TooN.git
 git clone https://github.com/edrosten/gvars.git
 git clone https://github.com/edrosten/libcvd.git
