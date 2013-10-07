@@ -2,6 +2,8 @@
 
 cd ~
 echo "Installing OpenCV 2.4.5"
+mkdir lib
+cd lib
 mkdir OpenCV
 cd OpenCV
 echo "Removing any pre-installed ffmpeg and x264"
