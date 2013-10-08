@@ -20,10 +20,10 @@ sudo apt-get install -y libavcodec-dev libavformat-dev libswscale-dev libdc1394-
 sudo apt-get install -y x264 v4l-utils ffmpeg
 
 echo "Downloading OpenCV 2.4.5"
-wget -O openCV-2.4.5.tar.gz http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.5/opencv-2.4.5.tar.gz/download
+wget -O opencv-2.4.5.tar.gz http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.5/opencv-2.4.5.tar.gz/download
 echo "Installing OpenCV 2.4.5"
-tar -xvf openCV-2.4.5.tar.gz
-cd openCV-2.4.5
+tar -xvf opencv-2.4.5.tar.gz
+cd opencv-2.4.5
 mkdir build
 cd build
 cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local ..
