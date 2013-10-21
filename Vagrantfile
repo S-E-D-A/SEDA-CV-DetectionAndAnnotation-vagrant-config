@@ -24,6 +24,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Install PTAM Libraries
   config.vm.provision :shell, :path => "installPTAM_libs.sh"
 
+  # Install Sublime
+  config.vm.provision :shell, :path => "installSublime.sh"
+
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
   # config.vm.box_url = "http://domain.com/path/to/above.box"
