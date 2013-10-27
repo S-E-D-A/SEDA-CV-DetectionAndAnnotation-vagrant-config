@@ -74,3 +74,12 @@ cd gvars/
 make
 make install
 cd ../
+
+# Add sync folder
+mkdir -p "/vagrant/sync"
+chown -R vagrant:vagrant "/vagrant/sync/"
+
+# Link sync directory into home
+if [[ ! -L "/home/vagrant/sync" ]]; then
+  ln -s "/vagrant/sync" "/home/vagrant/sync"
+fi
