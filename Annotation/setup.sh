@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 apt-get -y  update 
-apt-get -y  upgrade 
+#apt-get -y  upgrade 
 apt-get -y  install build-essential
 apt-get -y  install g++
 apt-get -y  install gcc
 
-# Tools -y 
+# Tools 
 apt-get -y  install vim 
 apt-get -y  install ddd 
 apt-get -y  install gdb 
@@ -32,7 +32,7 @@ apt-get -y install libjpeg-turbo8
 apt-get -y install libjpeg8-dev
 apt-get -y install libjpeg-turbo8-dev
 
-apt-get -y  install libpng-0
+apt-get -y  install libpng12-0
 apt-get -y  install libpng12-dev
 
 apt-get -y install liblapack3gf
@@ -47,7 +47,6 @@ apt-get -y install libboost-all-dev
 
 apt-get -y install libreadline-dev
 apt-get -y install ncurses-dev
-apt-get -y install libfortran3
 
 # TooN
 git clone git://github.com/edrosten/TooN.git
@@ -69,7 +68,9 @@ make install
 cd ../
 
 # GVars                                                                                                                            
-cd gvars/
+git clone https://github.com/edrosten/gvars.git
+git pull origin master
+cd gvars
 ./configure --disable-widgets
 make
 make install
