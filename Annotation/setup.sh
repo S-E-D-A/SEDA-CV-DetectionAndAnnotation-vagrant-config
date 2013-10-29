@@ -20,6 +20,9 @@ apt-get -y install libx11-dev
 apt-get -y install freeglut3
 apt-get -y install freeglut3-dev
 
+apt-get -y install libavcodec-dev
+apt-get -y install libavformat-dev
+apt-get -y install libswscale-dev
 apt-get -y install ffmpeg
 
 apt-get -y install libdc1394-22-dev
@@ -62,7 +65,7 @@ git clone git://github.com/edrosten/libcvd.git
 git pull origin master
 cd libcvd
 export CXXFLAGS=-D_REENTRANT
-./configure
+./configure --enable-gpl
 make
 make install
 cd ../
