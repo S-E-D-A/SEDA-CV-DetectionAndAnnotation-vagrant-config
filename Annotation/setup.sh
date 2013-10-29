@@ -48,8 +48,17 @@ apt-get -y install libblas-doc
 
 apt-get -y install libboost-all-dev
 
+# --Useful for GVars
 apt-get -y install libreadline-dev
-apt-get -y install ncurses-dev
+apt-get -y install ncurses-dev #might be not needed
+
+# --Flycapture Dependencies
+apt-get -y install libgtkmm-2.4-dev
+apt-get -y install libglademm-2.4-dev
+apt-get -y install libgtkglextmm-x11-1.2-dev
+apt-get -y install libusb-1.0
+apt-get -y install libusb-1.0-dev
+apt-get -y install libraw1394-11
 
 # TooN
 git clone git://github.com/edrosten/TooN.git
@@ -78,6 +87,10 @@ cd gvars
 make
 make install
 cd ../
+
+# FlyCapture
+
+
 
 # Add sync folder
 mkdir -p "/vagrant/sync"
