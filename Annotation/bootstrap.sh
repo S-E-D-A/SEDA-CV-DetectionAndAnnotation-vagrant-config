@@ -61,13 +61,12 @@ apt-get -y install libblas-doc
 apt-get -y install libreadline-dev
 apt-get -y install ncurses-dev #might be not needed
 
-cd $HOME
+cd /home/vagrant
 
 # TooN
 if [ ! -f /.tooninstalled ]; then
     echo "Provisioning TooN."
     git clone git://github.com/edrosten/TooN.git
-    git pull origin master
     cd TooN
     ./configure
     make
@@ -82,8 +81,8 @@ fi
 if [ ! -f /.libcvdinstalled ]; then
     echo "Provisioning libcvd."
     git clone git://github.com/edrosten/libcvd.git
-    git pull origin master
     cd libcvd
+    git checkout f182a3b3973cb440fe12dfe9e10c5f166bdc804f
     export CXXFLAGS=-D_REENTRANT
     ./configure --enable-gpl
     make
@@ -97,8 +96,7 @@ fi
 # GVars                                                                                                                            
 if [ ! -f /.gvarsinstalled ]; then
     echo "Provisioning Gvars."
-    git clone https://github.com/edrosten/gvars.git
-    git pull origin master
+    git clone https://github.com/edrosten/gvars.git 
     cd gvars
     ./configure --disable-widgets
     make
