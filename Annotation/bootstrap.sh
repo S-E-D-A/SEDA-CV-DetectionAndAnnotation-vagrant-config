@@ -107,6 +107,14 @@ else
     echo "GVars already installed."
 fi
 
+# Update Project Repo
+if [ ! -d SEDA-CV-DetectionAndAnnotation ]; then
+    git clone https://github.com/S-E-D-A/SEDA-CV-DetectionAndAnnotation
+else
+    cd SEDA-CV-DetectionAndAnnotation
+    git fetch origin master
+    cd ..
+fi
 
 # Add sync folder
 mkdir -p "/vagrant/sync"
