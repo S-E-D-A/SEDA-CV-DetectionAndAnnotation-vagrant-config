@@ -10,6 +10,8 @@ apt-get -y install g++
 apt-get -y install gcc
 
 # --DRIVERS
+# Nvidia video drivers update
+apt-get install python-software-properties
 apt-add-repository ppa:ubuntu-x-swat/x-updates
 apt-get update
 apt-get install nvidia-current
