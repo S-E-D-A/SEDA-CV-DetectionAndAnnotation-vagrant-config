@@ -11,11 +11,11 @@ apt-get -y install gcc
 
 # --DRIVERS
 # Nvidia video drivers update
-apt-get install python-software-properties
+apt-get -y install python-software-properties
 apt-add-repository ppa:ubuntu-x-swat/x-updates
-apt-get update
-apt-get install nvidia-current
-apt-get install mesa-tools
+apt-get -y update
+apt-get -y install nvidia-current
+apt-get -y install mesa-tools
 
 # --TOOLS
 apt-get -y install vim 
