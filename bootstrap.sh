@@ -67,6 +67,7 @@ apt-get -y install libblas-doc
 # GVars add-ons
 apt-get -y install libreadline-dev
 apt-get -y install ncurses-dev #might be not needed
+apt-get -y install libfltk1.3-dev #gui
 
 cd /home/vagrant
 
@@ -105,7 +106,7 @@ if [ ! -f /.gvarsinstalled ]; then
     echo "Provisioning Gvars."
     git clone https://github.com/edrosten/gvars.git 
     cd gvars
-    ./configure --disable-widgets
+    ./configure
     make
     make install
     cd ../
