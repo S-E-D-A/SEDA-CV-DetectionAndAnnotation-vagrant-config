@@ -17,7 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
   # Required tools install
-  config.vm.provision "shell", path:"./bootstrap.sh"
+  config.vm.provision "shell", path:"./setup.sh"
   # Detect which package installs to cache
   config.cache.auto_detect = true
   # Limit scope to one machine
