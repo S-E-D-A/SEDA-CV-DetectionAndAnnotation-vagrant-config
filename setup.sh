@@ -42,6 +42,7 @@ apt-get -y install libblas-dev
 apt-get -y install libblas-doc
 
 apt-get -y install libboost-all-dev
+apt-get -y install libopencv-dev
 
 # TooN
 git clone git://github.com/edrosten/TooN.git
