@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 apt-get -y  update 
-apt-get -y  upgrade 
+#apt-get -y  upgrade 
 apt-get -y  install build-essential
 apt-get -y  install g++
 apt-get -y  install gcc
