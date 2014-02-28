@@ -10,11 +10,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "precise64"
+  config.vm.box = "precise64-gui"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.box_url = "https://s3.amazonaws.com/precise64-gui/precise64-gui.box"
 
   # Required tools install
   config.vm.provision "shell", path:"./setup.sh"
@@ -47,12 +47,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # If true, then any SSH connections made will enable agent forwarding.
   # Default value: false
-    config.ssh.forward_agent = true
-    config.ssh.forward_x11 = true
+  config.ssh.forward_agent = true
+  config.ssh.forward_x11 = true
 
   # Uncomment to use a GUI
-  # config.vm.provider :virtualbox do |vb|
-  #    vb.gui = true
-  # end
+  config.vm.provider :virtualbox do |vb|
+    vb.name = "SEDA-CV-TextDetection"
+    vb.gui = true
+    vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
+    vb.customize ["modifyvm", :id, "--usb", "on", "--usbehci", "on"]
+  end
 
 end
