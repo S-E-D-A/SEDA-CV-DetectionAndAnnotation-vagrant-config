@@ -54,18 +54,36 @@ PTI="${PTI} libopencv-dev"
 # Install all PTI packages
 apt-get install -y ${PTI}
 
-# TooN
-git clone git://github.com/edrosten/TooN.git
-git pull origin master
-cd TooN
-./configure
-make install
-cd ../
+# -- Change user to vagrant
+su vagrant
 
-# LibCVD
-git clone git://github.com/edrosten/libcvd.git
-git pull origin master
-cd libcvd
-./configure
-make
-make install
+# --TooN
+if [ ! -f /.tooninstalled ]; then
+  echo "Provisioning TooN."
+  git clone git://github.com/edrosten/TooN.git
+  cd TooN
+  ./configure
+  make
+  sudo make install
+  cd ../
+  touch /.tooninstalled
+  chown -R vagrant:vagrant TooN
+else
+  echo "TooN already installed."
+fi
+
+# --LibCVD
+if [ ! -f /.libcvdinstalled ]; then
+  echo "Provisioning libcvd."
+  git clone git://github.com/edrosten/libcvd.git
+  cd libcvd
+  export CXXFLAGS=-D_REENTRANT
+  ./configure --enable-gpl
+  make -j4
+  sudo make install
+  cd ../
+  touch /.libcvdinstalled
+  chown -R vagrant:vagrant libcvd
+else
+  echo "LibCVD already installed."
+fi
