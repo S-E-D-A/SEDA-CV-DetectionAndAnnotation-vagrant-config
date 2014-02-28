@@ -6,7 +6,8 @@ then
   set -ex
 fi
 
-apt-get -y  update 
+apt-get -y update 
+apt-get -y upgrade > /dev/null
 
 # PTI is Package To Install
 PTI="${PTI} build-essential"
@@ -37,8 +38,10 @@ PTI="${PTI} libjpeg-turbo8"
 PTI="${PTI} libjpeg8-dev"
 PTI="${PTI} libjpeg-turbo8-dev"
 
-PTI="${PTI} libpng-0"
+PTI="${PTI} libpng3-dev"
 PTI="${PTI} libpng12-dev"
+PTI="${PTI} libpng++-dev"
+PTI="${PTI} libpng12-0-dev"
 
 PTI="${PTI} liblapack3gf"
 PTI="${PTI} liblapack-dev"
