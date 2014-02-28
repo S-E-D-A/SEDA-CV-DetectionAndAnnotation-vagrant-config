@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# If SEDA_TD_VAGRANT_DEBUG_MODE set, show detailed output
+if [ ! -z ${SEDA_TD_VAGRANT_DEBUG_MODE} ]
+then
+  set -ex
+fi
+
 apt-get -y  update 
 #apt-get -y  upgrade 
 apt-get -y  install build-essential
