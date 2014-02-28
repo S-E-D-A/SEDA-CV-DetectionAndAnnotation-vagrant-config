@@ -7,48 +7,52 @@ then
 fi
 
 apt-get -y  update 
-#apt-get -y  upgrade 
-apt-get -y  install build-essential
-apt-get -y  install g++
-apt-get -y  install gcc
+
+# PTI is Package To Install
+PTI="${PTI} build-essential"
+PTI="${PTI} g++"
+PTI="${PTI} gcc"
 
 # Tools -y 
-apt-get -y  install vim 
-apt-get -y  install ddd 
-apt-get -y  install gdb 
-apt-get -y  install valgrind
-apt-get -y  install git
+PTI="${PTI} vim"
+PTI="${PTI} ddd"
+PTI="${PTI} gdb"
+PTI="${PTI} valgrind"
+PTI="${PTI} git"
 
 # Libs
-apt-get -y install libx11-6 
-apt-get -y install libx11-dev
+PTI="${PTI} libx11-6"
+PTI="${PTI} libx11-dev"
 
-apt-get -y install freeglut3
-apt-get -y install freeglut3-dev
+PTI="${PTI} freeglut3"
+PTI="${PTI} freeglut3-dev"
 
-apt-get -y install ffmpeg
+PTI="${PTI} ffmpeg"
 
-apt-get -y install libtiff4
-apt-get -y install libtiff4-dev
+PTI="${PTI} libtiff4"
+PTI="${PTI} libtiff4-dev"
 
-apt-get -y install libjpeg8
-apt-get -y install libjpeg-turbo8
-apt-get -y install libjpeg8-dev
-apt-get -y install libjpeg-turbo8-dev
+PTI="${PTI} libjpeg8"
+PTI="${PTI} libjpeg-turbo8"
+PTI="${PTI} libjpeg8-dev"
+PTI="${PTI} libjpeg-turbo8-dev"
 
-apt-get -y  install libpng-0
-apt-get -y  install libpng12-dev
+PTI="${PTI} libpng-0"
+PTI="${PTI} libpng12-dev"
 
-apt-get -y install liblapack3gf
-apt-get -y install liblapack-dev
-apt-get -y install liblapack-doc
+PTI="${PTI} liblapack3gf"
+PTI="${PTI} liblapack-dev"
+PTI="${PTI} liblapack-doc"
 
-apt-get -y install libblas3gf
-apt-get -y install libblas-dev
-apt-get -y install libblas-doc
+PTI="${PTI} libblas3gf"
+PTI="${PTI} libblas-dev"
+PTI="${PTI} libblas-doc"
 
-apt-get -y install libboost-all-dev
-apt-get -y install libopencv-dev
+PTI="${PTI} libboost-all-dev"
+PTI="${PTI} libopencv-dev"
+
+# Install all PTI packages
+apt-get install -y ${PTI}
 
 # TooN
 git clone git://github.com/edrosten/TooN.git
