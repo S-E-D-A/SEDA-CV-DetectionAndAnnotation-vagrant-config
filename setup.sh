@@ -87,3 +87,20 @@ if [ ! -f /.libcvdinstalled ]; then
 else
   echo "LibCVD already installed."
 fi
+
+# Add sync folder
+mkdir -p "/vagrant/sync"
+sudo chown -R vagrant:vagrant "/vagrant/sync/"
+
+# Link sync directory into home
+if [[ ! -L "/home/vagrant/sync" ]]; then
+  ln -s "/vagrant/sync" "/home/vagrant/sync"
+  chown -R vagrant:vagrant /home/vagrant/sync
+fi
+
+# Update ldconfig
+sudo ldconfig
+
+echo "###################################"
+echo "Done! Vagrant provision successful."
+echo "###################################"
